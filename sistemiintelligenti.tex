@@ -1,0 +1,79 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[landscape]{geometry}
+
+
+\begin{document}
+
+\section{Ricerca}
+\subsection{Criteri di valutazione delle strategie}
+\begin{enumerate}
+    \item \textbf{Completezza}\\
+            Garanzia di trovare una soluzione, se esiste
+    \item \textbf{Ottimalità}\\
+            Garanzia di trovare una soluzione ottima (a costo minimo)
+    \item \textbf{Complessità Temporale}\\
+            Quanto tempo occorre per trovare una soluzione
+    \item \textbf{Complessità Spaziale}\\
+            Quanta memoria occorre per effettuare la ricerca
+\end{enumerate}
+\subsubsection{Valutazioe della Complessità (Temporale e Spaziale)}
+Si usa Tempo e Spazio \textbf{parametrici}. Calcolati in termini di \textbf{numero di nodi creati o visitati}.
+\subsection{Strategie di Ricerca}
+Ci sono due tipologie di approcci (riguardanti la conoscenza, quanta e quale)
+\begin{enumerate}
+    \item \textbf{Approcci Blind}\\
+        usano esclusivamente la struttura del problema per cercare (e trovare) una soluzione.
+    \item \textbf{Approcci Informati}\\
+        usano la struttura del problema + ulteriore conoscenza per guidare la ricerca
+        \begin{enumerate}
+            \item Monoagente
+            \item Multiagente (giochi)
+            \item Problemi di Assegnamento (\textbf{CSP})
+        \end{enumerate}
+\end{enumerate}
+\subsubsection{RICERCA IN AMPIEZZA}
+\begin{itemize}
+    \item La ricerca espande il nodo radice, poi tutti i suoi successori, poi tutti i discendenti di secondo livello, ecc.
+    \item Si realizza gestendo la frontiera come una coda FIFO.
+    \item Tutti i nodi sulla frontiera e tutti i loro antenati vanno tenuti in memoria per poter ricostruire la soluzione quando si trova il nodo obiettivo (Complessità Spaziale)
+\end{itemize}
+\paragraph{Valutazione}
+\subparagraph{Completezza}
+Se esiste un nodo obiettivo a una profondità \textbf{finita $d$} esso verrà
+trovato \textbf{a patto che} il \textbf{fattore di ramificazione} (cioè il numero di figli che un nodo può avere) $b$ sia finito
+\subparagraph{Ottimalità}
+La soluzione trovata è ottima \textbf{solo se} il costo del cammino è
+\textbf{una funzione monotona crescente della profondità} (es. tutte le azioni hanno lo stesso costo, quindi \textit{il costo} dipende solo dalla profondità dell'albero)
+\subparagraph{Complessità temporale}
+di tipo \textbf{esponenziale} $O(b^{d+1})$\\
+Quanto tempo occorre per trovare una soluzione col crescere dello spazio di ricerca
+\subparagraph{Complessità spaziale}
+di tipo \textbf{esponenziale} $O(b^{d+1})$\\
+Quanta memoria occorre per effettuare la ricerca col crescere dello spazio di ricerca
+
+\subsubsection{RICERCA A COSTO UNIFORME}
+\begin{itemize}
+    \item Quando i costi dei passi \textbf{non sono tutti identici}:
+        \begin{itemize}
+            \item ogni nodo ha associato il costo del cammino con cui è stato raggiunto
+            \item la frontiera è mantenuta ordinata
+            \item a ogni iterazione \textbf{espande il nodo appartenente a un cammino di costo minimo}
+        \end{itemize}
+    \item Quando i costi sono tutti \textbf{uguali} diventa la ricerca in \textbf{ampiezza}.
+    \item \textbf{ATTENZIONE}
+    \begin{itemize}
+        \item COSTO $\neq$ NUMERO DEI PASSI\\il numero dei passi non conta, conta solo il costo dei cammini
+        \item quando trova il nodo obiettivo \textbf{NON SI FERMA SUBITO}, prima controlla se vi sono cammini aperti di costo inferire e, nel caso, prova ad espanderli.
+    \end{itemize}
+\end{itemize}
+\subsubsection{Ricerca in profondità (senza BackTracking)}
+\subsubsection{Iterative Deepening}
+\subsubsection{Ricerca Bidirezionale}
+
+\end{document}
