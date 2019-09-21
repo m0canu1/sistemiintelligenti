@@ -76,4 +76,25 @@ Quanta memoria occorre per effettuare la ricerca col crescere dello spazio di ri
 \subsubsection{Iterative Deepening}
 \subsubsection{Ricerca Bidirezionale}
 
+\section{Rappresentazione della Conoscenza}
+\subsection{Logica}
+\paragraph{Conseguenza Logica}
+$A \models B$ indica che, nei casi in cui $A$ \textbf{è VERA}, allora anche $B$ \textbf{è vera}.
+\paragraph{Equivalenza}
+$A \equiv B$ \textbf{se e solo se $A \models B$ e $B \models A$}
+\paragraph{Tautologia(Validità)}
+Una formula $P$ è \textbf{valida} se è \textbf{vera in tutti i modelli}.\\
+$P \equiv True$.\\
+Una formula $P$ è \textbf{valida} se e solo se $\neg P$ \textbf{è insoddisfacibile}.
+\paragraph{Soddisfacibilità}
+Una formula $P$ è \textbf{soddisfacibile} se esiste \textbf{qualche modello in cui è vera}.\\
+Una formula $P$ è \textbf{soddisfacibile} se e solo se $\neg P1$ \textbf{non è valida (non è una tautologia)}.
+\paragraph{Insoddisfacibilità}
+Una formula $P$ è \textbf{insoddisfacibile} se \textbf{è falsa in tutti i modelli}.
+\paragraph{Inferenza}
+È il processo con il quale, da una proposizione accolta come \textbf{vera}, si passa ad una seconda proposizione la cui verità è \textbf{derivata dalla prima}.\\
+Sia $i$ un algoritmo di \textbf{inferenza}.\\
+$KB \vdash_i A$\\
+($A$ è derivabile da $KB$ utilizzando l'algoritmo \textbf{i}).
+
 \end{document}
