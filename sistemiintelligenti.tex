@@ -5,7 +5,7 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[landscape]{geometry}
+% \usepackage[landscape]{geometry}
 
 
 \begin{document}
@@ -30,7 +30,7 @@ Ci sono due tipologie di approcci (riguardanti la conoscenza, quanta e quale)
     \item \textbf{Approcci Blind}\\
         usano esclusivamente la struttura del problema per cercare (e trovare) una soluzione.
     \item \textbf{Approcci Informati}\\
-        usano la struttura del problema + ulteriore conoscenza per guidare la ricerca
+        usano la struttura del problema + ulteriore conoscenza per guidare la ricerca.
         \begin{enumerate}
             \item Monoagente
             \item Multiagente (giochi)
@@ -97,4 +97,21 @@ Sia $i$ un algoritmo di \textbf{inferenza}.\\
 $KB \vdash_i A$\\
 ($A$ è derivabile da $KB$ utilizzando l'algoritmo \textbf{i}).
 
+\section{Constraint Satisfaction Problem}
+Questi problemi sono problemi in cui gli stati assumono una \textbf{struttura} e \textbf{contengono informazioni} che vengono utilizzate nella ricerca della soluzione.\\
+Viene anche introdotta la nozione di  \textbf{vincolo} e nuovi metodi di ricerca specifici.\\
+Un \textbf{CSP} è definito da:
+\begin{itemize}
+    \item un insieme di \textbf{variabili} $X_1, \dots,X_n$
+    \item un insieme di \textbf{vincoli} $C_1, \dots,C_m$
+    \item (OPZIONALE) la richiesta di \textbf{massimizzare} una \textbf{funzione obiettivo}.
+\end{itemize}
+Le \textbf{variabili} prendono i valori tramite l'\textbf{assegnamento}, che è un'attribuzione di valori ad alcune variabili del nostro problema\\
+ $\{X_{i1}=v_{i1}, X_{i2}=v_{i2}, \dots\}$\\
+Un \textbf{assegnamento} è detto:
+\begin{itemize}
+    \item \textbf{COMPLETO} se assegna valori a tutte le variabili del CSP
+    \item \textbf{CONSISTENTE} se non viola alcun vincolo del CSP
+    \item \textbf{SOLUZIONE} se è completo e consistente
+\end{itemize}
 \end{document}
